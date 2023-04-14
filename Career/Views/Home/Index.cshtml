@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+<div id="HederPage" class="HederPage">
+    <h3>We Will Help You To Find a Jop</h3>
+    <button onclick="ShowTips()" id="GoToTips">Create</button>
+</div>
+<div style="display: none;" id="Tips" class="Tips">
+    <img src="Imges/16.png">
+    <h3>-Write a simple summary of you</h3>
+    <h3>-You must write your previous work summary in a clear way</h3>
+    <h3>-put a pictur of you</h3>
+    <h3>-Check your information</h3>
+    <h3>-put your means of communication other then the phone number</h3>
+    <h3>
+        -To Save Cv Click (shift + p) ,click on more option and select background,
+        and click on paper size select 'A4'
+    </h3>
+    <a asp-action="CreateCv" asp-controller="Home"><button>Let's start</button></a>
+</div>

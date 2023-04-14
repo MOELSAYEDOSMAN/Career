@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewData["Title"] - Career</title>
+    <link rel="stylesheet" href="~/Css/Home.css">
+    <link rel="stylesheet" href="~/Css/Create.css">
+
+</head>
+<body>
+    <header>
+        <div class="Icon">
+            <p>Career</p>
+        </div>
+        <div class="Items">
+            <ul>
+                <li>
+                    <a href="">
+                        <h3>AboutUs</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <h3>Help</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <h3>CallUs</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <h3>Service</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <h3>SupportUs</h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    
+        <main role="main">
+            @RenderBody()
+        </main>
+
+    <footer>
+        <h3>All Rights in succession for us the year:2023</h3>
+    </footer>
+    <script src="~/JavaScript/jquery.js"></script>
+    <script src="~/JavaScript/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

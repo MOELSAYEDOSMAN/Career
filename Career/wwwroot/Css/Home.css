@@ -1,0 +1,138 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+header
+{
+    height: 54px;
+    background-color: rgb(38 38 38 / 71%);
+    color: white;
+    position: absolute;
+    z-index: 999;
+    display: -webkit-flex;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    justify-content: space-between;
+    top: 0;
+    width: 90%;
+}
+header .Icon p
+{
+    font-size: 40px;
+    font-family: monospace;
+}
+header .Items ul
+{
+    display: inline-flex;
+}
+header .Items ul li
+{
+    padding: 4px;
+    color: white;
+    list-style: none;
+}
+header .Items ul li a
+{
+    color: white;
+    text-decoration: auto;
+}
+header .Items ul li a:hover
+{
+    color: rgb(223, 157, 69);
+}
+header .Items ul li a h3
+{
+    font-size: 21px;
+    font-family: monospace;
+    padding-top: 10px; ;
+}
+main .HederPage
+{
+    background-image: url("../Imges/header.jpg");
+    text-align: center;
+    height: 400px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 42px;
+    border-bottom: #765748 2px solid;
+}
+main .HederPage
+{
+    padding-top: 301px;
+    color: white;
+}
+main .HederPage button
+{
+    cursor: pointer;
+    font-size: inherit;
+    color: white;
+    border: none;
+    background: #6b4d42;
+    border-radius: 11px;
+    padding: 4px;
+}
+main .HederPage button:hover
+{
+    opacity: .8;
+}
+main .Tips
+{
+    color: black;
+    width: 100%;
+    text-align: justify;
+}
+main .Tips .HeaderTip
+{
+    background-color: #765748;
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    color: white;
+    font-size: 30px;
+    padding: 15px;
+    border-bottom: white 2px solid;
+}
+main .Tips img
+{
+    width: 100%;
+    height: 500px;
+}
+main .Tips h3
+{
+    padding: 10px;
+    font-size: 20px;
+}
+main .Tips a
+{
+    width: 100%;
+    display: block;
+    text-align: end;
+}
+main .Tips a button
+{
+    cursor: pointer;
+    color: white;
+    border: none;
+    background: #6b4d42;
+    border-radius: 4px;
+    font-size: 27px;
+    padding: 7px;
+    margin: 14px 235px;
+}
+main .Tips a button:hover
+{
+    opacity: .8;
+}
+footer
+{
+    background: #50423f;
+    color: white;
+    text-align: center;
+    font-size: 19px;
+    padding: 20px;
+}

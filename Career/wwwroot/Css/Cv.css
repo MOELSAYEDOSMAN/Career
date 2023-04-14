@@ -1,0 +1,135 @@
+@media print
+{
+    body{
+        width: 210mm;
+        height: 297mm;
+    }
+}
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+header
+{
+    color: white;
+    background-color: #50423f;
+    height: 300px;
+    display: inline-flex;
+    width: max-content;
+    padding: 25px;
+    height: fit-content;
+    
+}
+header .ImageUser
+{
+    border: white 2px solid;
+    width: fit-content;
+    border-radius: 138px;
+    height: fit-content;
+    padding: 1px;
+    margin-left: 40px;
+}
+header .ImageUser img
+{
+    width: 251px;
+    max-height: 241px;
+    border-radius: 117px;
+}
+header .GeneralInforamtion
+{
+    margin: 15px;
+    margin-top: 97px;
+    margin-left: 32px;
+}
+header .GeneralInforamtion h3
+{
+    color: #cbbbbb;
+    padding-left: 20px;
+}
+header .OtherInfoation
+{
+    margin-left: 160px;
+    font-size: 19px;
+    color: #d0c9c9;
+    margin-top: 55px;
+}
+header .OtherInfoation h4
+{
+    padding: 10px;
+}
+main
+{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    color: #50423f;
+}
+main .Summary h1,
+main .Eduction h1
+{
+    margin-bottom: 10px;
+    color: rgb(133, 58, 12);
+    border-bottom: 2px solid rgb(133, 58, 12);
+    width: 160px;
+    display: block;
+}
+main .Summary h2{
+    width: fit-content;
+}
+
+main .Eduction .College
+{
+    margin: 15px;
+}
+main .Eduction .Language
+{
+    display: flex;
+}
+main .Eduction .Language h3
+{
+    margin-right: 8px;
+}
+main .Eduction .Skill
+{
+    display: -webkit-inline-box;
+    width: fit-content;
+}
+main .Eduction .Skill h3
+{
+    display: inherit;
+    margin: 5px;
+}
+main .Eduction .work
+{
+    margin: 10px;
+}
+main .Eduction .work h2
+{
+    width: fit-content;
+    color: saddlebrown;
+    border-bottom: 2px saddlebrown solid;
+    margin: 4px;
+}
+main .Eduction .work h3
+{
+    font-size: large;
+    width: 90%;
+    font-family: math;
+}
+main .Eduction .Collection .Social
+{
+    display: -webkit-inline-box;
+    margin: 11px;
+}
+main .Eduction .Collection
+{
+    display: -webkit-inline-box;
+    width: 100%;
+    border-top: 2px solid #50423f;
+}
+main .Eduction .Collection .Social img
+{
+    width: 100px;
+}

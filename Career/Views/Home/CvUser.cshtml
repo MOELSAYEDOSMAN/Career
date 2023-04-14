@@ -1,0 +1,181 @@
+﻿@using static Career.Controllers.HomeController
+@model InputCv
+@{
+    ViewData["Title"] = "CV";
+    int c = 0;
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Career</title>
+    <link rel="stylesheet" href="~/Css/Cv.css">
+</head>
+<body>
+    <header>
+        <div class="ImageUser">
+            <img src="data:image/png;base64,@Convert.ToBase64String(Model.imgaeUs)">
+        </div>
+        <div class="GeneralInforamtion">
+            <h2>@Model.NameUser</h2>
+            <h3>. @Model.Jop</h3>
+        </div>
+        <div class="OtherInfoation">
+            <div class="InputInf">
+                <h4>-Birthday: @Model.Birthday.Day/@Model.Birthday.Month/@Model.Birthday.Year</h4>
+                <h4>-Address: @Model.Country,@Model.Governorate,@Model.Address</h4>
+                <h4>-Mobile: @Model.Phone</h4>
+                <h4>-Email: @Model.Email</h4>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="Summary">
+            <h1>Summary:</h1>
+            <h2>@Model.summary</h2>
+        </div>
+        <div class="Eduction">
+            <h1>Eduction:</h1>
+            @for(int i=0;i<Model.CollegeName.Count;i++)
+            {
+                <div class="College">
+                    <h3>College: @Model.CollegeName[i]</h3>
+                    <h3>Department: @Model.Department[i]</h3>
+                    <h3>start: @Model.startDate[i].Date.Year</h3>
+                    <h3>End: @Model.EndDate[i].Date.Year</h3>
+                    <h3>Garde: @Model.Grade[i]</h3>
+                </div>
+            }
+        </div>
+        <div class="Eduction">
+            <h1>Language:</h1>
+            @for(int i=0;i<Model.Language.Count;i++)
+            {
+                <div class="Language">
+                    <h3>◉ @Model.Language[i]: </h3>
+                    <input type="range" disabled max="100" min="1" value="@Model.RLangage[i]">
+                </div>
+            }
+            
+        </div>
+        <div class="Eduction">
+            <h1>Skill :</h1>
+            <div class="Skill">
+                @for(int i=0;i<Model.SkillName.Count;i++)
+                {
+                    <h3>◉ @Model.SkillName[i]</h3>
+                }
+            </div>
+        </div>
+        <div class="Eduction">
+            <h1 style="width: 290px;">Work Experience :</h1>
+            @for(int i=0;i<Model.NameProject.Count;i++)
+            {
+                <div class="work">
+                    <h2>@Model.NameProject[i]</h2>
+                    <h3>
+                    @Model.summaryProject[i]
+                    </h3>
+                </div>
+            }
+        </div>
+        @if(Model.ImageC!=null)
+        {
+            <div class="Eduction">
+                <h1 style="width: 290px;">Certificates :</h1>
+                @for(int i=0;i<Model.ImageC.Count;i++)
+                {
+                    <div class="work">
+                        <img src="data:image/png;base64,@Convert.ToBase64String(Model.ImageC[0])">
+                    </div>
+                }
+
+            </div>
+        }
+       
+        <div class="Eduction">
+            <div class="Collection">
+                @for(int i=0;i<Model.SocialName.Count;i++)
+                {
+                    if (Model.SocialName[i] == "FaceBook")
+                    {
+                        <div class="Social">
+                        <img src="~/Imges/pngegg (9).png">
+                        <div id="@i"></div>
+                        </div>
+                    }
+                    else if (Model.SocialName[i] == "GitHub")
+                    {
+                        <div class="Social">
+                            <img src="~/Imges/1681369648009.png">
+                            <div id="@i"></div>
+                        </div>
+                    }
+                    else if (Model.SocialName[i] == "LinkedIn")
+                    {
+                        <div class="Social">
+                            <img src="~/Imges/1681369554173.png">
+                            <div id="@i"></div>
+                        </div>
+                    }
+                    else if (Model.SocialName[i] == "Instgram")
+                    {
+                        <div class="Social">
+                            <img src="~/Imges/1681369648002.png">
+                            <div id="@i"></div>
+                        </div>
+                    }
+                    else if (Model.SocialName[i] == "Twiter")
+                    {
+                        <div class="Social">
+                            <img src="~/Imges/1681369647993.png">
+                            <div id="@i"></div>
+                        </div>
+                    }
+                }
+                        
+
+        </div>
+        </div>
+
+    </main>
+
+    <script src="~/JavaScript/qrcode.min.js"></script>
+    <script src="~/JavaScript/jspdf.js"></script>
+    <script>
+        // Get the text you want to encode as a QR code
+
+
+        // Create a new QR code instance
+        var lsData = @Json.Serialize(@Model.LinkSoial);
+        for (var i = 0; i <= lsData.length; i++) {
+            var text = lsData[i];
+            var qrcode = new QRCode(document.getElementById(i.toString()), {
+                width: 100,
+                height: 100
+            });
+            qrcode.makeCode(text);
+        }
+
+
+        // Set the text to be encoded and render the QR code
+
+
+
+
+
+
+
+        const doc = new jsPDF();
+        const elementHTML = document.getElementById('element-to-export').innerHTML;
+        doc.html(elementHTML, {
+            callback: function () {
+                doc.save('page-to-pdf.pdf');
+            }
+        });
+
+    </script>
+</body>
